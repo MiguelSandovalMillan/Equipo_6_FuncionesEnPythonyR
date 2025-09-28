@@ -1,0 +1,141 @@
+---
+title: "InteresSimpleEquipo[6]"
+author: "Miguel Sandoval, Juan Carrillo, Aldo Hernandez, Rosendo Hernandez"
+format: 
+    html:
+      toc: TRUE
+    pdf:
+      documentclass: article
+      toc: FALSE
+echo: TRUE
+eval: TRUE
+---
+
+# Condicionales
+
+Los condicionales se usan para que el programa se ejecute en base a una condicion. Si la condicion se cumple el programa realizara la accion puesta dentro del condicional, pero si la condicion no se cumple el programa no realizara.
+Hay diferentes tipos de condicionales de los cuales tocaremos dos:
+
+- if
+- else if
+
+
+## Ejemplos usando if
+
+```{r}
+x = 5
+
+if(x>1){
+  resultado = "x es mayor a 1" # Nos regresa el valor
+}
+print(resultado)
+```
+
+## Ejemplos usando else if
+
+```{r}
+x = 5
+
+if(x>1){
+  resultado = "x es mayor a 1" # Nos indicara si x es mayor a 1
+}else if(x<1){
+  resultado= "x es menor a 1" # Nos indicara si x es menor a 1
+}
+print(resultado)
+```
+
+
+
+# Creacion de la Funcion con Condicional  (Valor Final)
+
+Una vez visto los condicionales. Necesitaremos meter un condicional en la funcion, donde este detectara los argumentos que se encuentran dentro de la funcion.  
+
+Utilizaremos el if para la funcion, ahora necesitamos que la funcion sea capaz de calcular el valor futuro si y solo si se dectan los los argumentos en la funcion.  
+
+Investigando un poco vimos que necesitamos un "verificador de argumentos" para comprobar si uno de los argumentos es nulo (no tiene valor o no existe).  
+
+Entonces ocuparemos este verificador de argumento.
+$$"\text{!is.null ( ) "}$$
+Probemos meter la condicional dentro de la funcion.
+
+```{r}
+interesSimpleBase = function(va, r, n){
+if(!is.null(va) && !is.null(r) && !is.null(n)){
+  VF = va*(1 + r*n)
+  return(VF)}
+}
+```
+
+
+
+```{r}
+miVF = interesSimpleBase(1,1,1)
+miVF
+```
+
+
+# Funcion de Interes Simple con cualquier argumento
+
+Pero ahora necesitamos que la computadora entienda que necesitamos calcular con los argumentos que le damos
+
+```{r}
+interesSimple = function(va = NULL, r = NULL, n = NULL, VF = NULL) { # Ponemos por default
+   parametros = list(va = va, r = r, n = n, VF = VF)  # Creamos una lista
+   
+   
+   
+   # Valor Final
+   if(is.null(VF)){
+    VF = va*(1 + r*n)
+    return(VF)
+   }
+   
+   else if(is.null(va)){
+     va = VF/(1 + r*n)
+     return(va)
+   }
+   
+   
+   else if(is.null(r)){
+     r = ((VF/va )- 1)/n
+     return(r)
+   }
+   
+   else if(is.null(n)){
+     n = ((VF/va) - 1)/r
+     return(n)
+   }
+   
+}
+```
+
+
+## Prueba
+
+Para garantizar el "exito" en nuestro trabajo, agarraremos los siguientes valores para los parametos y verificaremos que el codigo y los calculos cumplen con lo que buscamos.
+
+$$VA=1000\\,VF=1100\\,n=2\\,r=0.5$$
+
+Llamamos la funcion:
+
+```{r}
+MiVF=interesSimple(va = 1000, r = 0.05, n = 2)
+MiVF
+```
+
+```{r}
+MiVA=interesSimple(VF = 1100, r = 0.05, n = 2)
+MiVA
+```
+
+```{r}
+MiR=interesSimple(va = 1000, VF = 1100, n = 2)
+MiR
+```
+
+```{r}
+MiN=interesSimple(va = 1000, VF = 1100, r = 0.05)
+MiN
+```
+
+Efectivamente cumple
