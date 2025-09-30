@@ -210,3 +210,4 @@ print(MiN)
 
 
 - [Descargar archivo QMD (archivo de origen)](index.qmd)
+- [Descargar archivo script de R](index.R)
