@@ -209,4 +209,4 @@ print(MiN)
 # Descargar archivos💯
 
 
-- [Descargar archivo QMD (archivo de origen)](interesSimpleEquipo[6].qmd)
+- [Descargar archivo QMD (archivo de origen)](index.qmd)
