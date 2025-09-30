@@ -73,29 +73,27 @@ miVF
 Pero ahora necesitamos que la computadora entienda que necesitamos calcular con los argumentos que le damos
 
 ```{r}
-# Definimos los parametros con valores nulos
 interesSimple = function(va = NULL, r = NULL, n = NULL, VF = NULL) { 
    
    
-   # Valor Futuro
    if(is.null(VF)){
     VF = va*(1 + r*n)
     return(VF)
    }
    
-   # Valor Actual
+  
    else if(is.null(va)){
      va = VF/(1 + r*n)
      return(va)
    }
    
-   # Tasa de interes del Periodo
+  
    else if(is.null(r)){
      r = ((VF/va )- 1)/n
      return(r)
    }
    
-   # Cantidad de Periodos
+
    else if(is.null(n)){
      n = ((VF/va) - 1)/r
      return(n)
@@ -143,29 +141,28 @@ Efectivamente cumple con lo que necesitabamos
 Podriamos intentar hacer el codigo de otra manera, pero la mejor opcion sera traducir del lenguaje "R" al lenguaje de "python".
 
 ```{python}
-# Volvemos a definir los parametros con valores nulos
 def interesSimple(va = None, r = None, n = None, VF = None):
 
 
-   # Valor Futuro
+
    if VF is None:
     VF = va*(1 + r*n)
     return(VF)
    
    
-   # Valor Actual
+
    elif va is None:
      va = VF/(1 + r*n)
      return(va)
    
    
-   # Tasa de interes del Periodo
+
    elif r is None:
      r = ((VF/va )- 1)/n
      return(r)
    
    
-   # Cantidad de Periodos
+
    elif n is None:
      n = ((VF/va) - 1)/r
      return(n)
@@ -209,7 +206,7 @@ print(MiN)
 
 
 ```
-
 # Descargar archivos💯
 
-[Link de descarga del .qmd](interesSimleEquipo[6].qmd) ✔️
+
+- [Descargar archivo QMD (archivo de origen)](interesSimpleEquipo[6].qmd)

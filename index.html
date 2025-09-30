@@ -218,35 +218,33 @@ window.Quarto = {
 <h1>Funcion de Interes Simple con cualquier argumento</h1>
 <p>Pero ahora necesitamos que la computadora entienda que necesitamos calcular con los argumentos que le damos</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definimos los parametros con valores nulos</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>interesSimple <span class="ot">=</span> <span class="cf">function</span>(<span class="at">va =</span> <span class="cn">NULL</span>, <span class="at">r =</span> <span class="cn">NULL</span>, <span class="at">n =</span> <span class="cn">NULL</span>, <span class="at">VF =</span> <span class="cn">NULL</span>) { </span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>interesSimple <span class="ot">=</span> <span class="cf">function</span>(<span class="at">va =</span> <span class="cn">NULL</span>, <span class="at">r =</span> <span class="cn">NULL</span>, <span class="at">n =</span> <span class="cn">NULL</span>, <span class="at">VF =</span> <span class="cn">NULL</span>) { </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Valor Futuro</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span>(<span class="fu">is.null</span>(VF)){</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    VF <span class="ot">=</span> va<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">+</span> r<span class="sc">*</span>n)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(VF)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>   }</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Valor Actual</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(va)){</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>     va <span class="ot">=</span> VF<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> r<span class="sc">*</span>n)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(va)</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>   }</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Tasa de interes del Periodo</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(r)){</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>     r <span class="ot">=</span> ((VF<span class="sc">/</span>va )<span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>n</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(r)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>   }</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Cantidad de Periodos</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(n)){</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>     n <span class="ot">=</span> ((VF<span class="sc">/</span>va) <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>r</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(n)</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>   }</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span>(<span class="fu">is.null</span>(VF)){</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    VF <span class="ot">=</span> va<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">+</span> r<span class="sc">*</span>n)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(VF)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>   }</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(va)){</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>     va <span class="ot">=</span> VF<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> r<span class="sc">*</span>n)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(va)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>   }</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(r)){</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>     r <span class="ot">=</span> ((VF<span class="sc">/</span>va )<span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>n</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(r)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>   }</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>   <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">is.null</span>(n)){</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>     n <span class="ot">=</span> ((VF<span class="sc">/</span>va) <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span>r</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(n)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>   }</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="page-break-after: always;"></div>
 <section id="prueba-con-r" class="level2">
@@ -290,33 +288,32 @@ window.Quarto = {
 <h1>Python</h1>
 <p>Podriamos intentar hacer el codigo de otra manera, pero la mejor opcion sera traducir del lenguaje “R” al lenguaje de “python”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Volvemos a definir los parametros con valores nulos</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> interesSimple(va <span class="op">=</span> <span class="va">None</span>, r <span class="op">=</span> <span class="va">None</span>, n <span class="op">=</span> <span class="va">None</span>, VF <span class="op">=</span> <span class="va">None</span>):</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> interesSimple(va <span class="op">=</span> <span class="va">None</span>, r <span class="op">=</span> <span class="va">None</span>, n <span class="op">=</span> <span class="va">None</span>, VF <span class="op">=</span> <span class="va">None</span>):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Valor Futuro</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> VF <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    VF <span class="op">=</span> va<span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span> r<span class="op">*</span>n)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(VF)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> VF <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    VF <span class="op">=</span> va<span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span> r<span class="op">*</span>n)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(VF)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Valor Actual</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>   <span class="cf">elif</span> va <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>     va <span class="op">=</span> VF<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span> r<span class="op">*</span>n)</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span>(va)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>   <span class="cf">elif</span> va <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>     va <span class="op">=</span> VF<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span> r<span class="op">*</span>n)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span>(va)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Tasa de interes del Periodo</span></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>   <span class="cf">elif</span> r <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>     r <span class="op">=</span> ((VF<span class="op">/</span>va )<span class="op">-</span> <span class="dv">1</span>)<span class="op">/</span>n</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span>(r)</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>   <span class="cf">elif</span> r <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>     r <span class="op">=</span> ((VF<span class="op">/</span>va )<span class="op">-</span> <span class="dv">1</span>)<span class="op">/</span>n</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span>(r)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Cantidad de Periodos</span></span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>   <span class="cf">elif</span> n <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>     n <span class="op">=</span> ((VF<span class="op">/</span>va) <span class="op">-</span> <span class="dv">1</span>)<span class="op">/</span>r</span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span>(n)</span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>   <span class="cf">elif</span> n <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>     n <span class="op">=</span> ((VF<span class="op">/</span>va) <span class="op">-</span> <span class="dv">1</span>)<span class="op">/</span>r</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span>(n)</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div style="page-break-after: always;"></div>
 <section id="prueba-con-python" class="level2">
@@ -353,7 +350,9 @@ window.Quarto = {
 </section>
 <section id="descargar-archivos" class="level1">
 <h1>Descargar archivos💯</h1>
-<p><a href="interesSimleEquipo%5B6%5D.qmd">Link de descarga del .qmd</a> ✔️</p>
+<ul>
+<li><a href="interesSimpleEquipo%5B6%5D.qmd">Descargar archivo QMD (archivo de origen)</a></li>
+</ul>
 </section>
 
 </main>
