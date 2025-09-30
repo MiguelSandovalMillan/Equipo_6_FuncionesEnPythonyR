@@ -210,4 +210,6 @@ print(MiN)
 
 ```
 
+# Descargar archivos💯
 
+[Link de descarga del .qmd](interesSimleEquipo[6].qmd) ✔️
