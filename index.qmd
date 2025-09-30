@@ -9,6 +9,24 @@ format:
       toc: FALSE
 ---
 
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: "100px"
+
+knitr::include_graphics("https://contraloria.umich.mx/assets/images/logo.png")
+```
+
+Integrantes
+
+-Miguel Sandoval Millán ➡ 2408819j@umich.mx
+
+-Juan Carrillo Salazar ➡ 2408812d@umich.mx
+
+-Aldo Hernandez Perez ➡ 2405155c@umich.mx
+
+-Rosendo Hernandez Arias ➡ 2350465c@umich.mx
+
 # Condicionales
 
 Los condicionales se usan para que el programa se ejecute en base a una condicion. Si la condicion se cumple el programa realizara la accion puesta dentro del condicional, pero si la condicion no se cumple el programa no realizara.
