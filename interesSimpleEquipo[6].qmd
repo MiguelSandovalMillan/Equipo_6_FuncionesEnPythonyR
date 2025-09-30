@@ -1,14 +1,12 @@
 ---
 title: "InteresSimpleEquipo[6]"
-author: "Miguel Sandoval, Juan Carrillo, Aldo Hernandez, Rosendo Hernandez"
+author: "Miguel Sandoval, Juan Carrillo, Aldo Hernandez y Rosendo Hernandez"
 format: 
     html:
       toc: TRUE
     pdf:
       documentclass: article
       toc: FALSE
-echo: TRUE
-eval: TRUE
 ---
 
 # Condicionales
@@ -24,7 +22,6 @@ Hay diferentes tipos de condicionales de los cuales tocaremos dos:
 
 ```{r}
 x = 5
-
 if(x>1){
   resultado = "x es mayor a 1" # Nos regresa el valor
 }
@@ -35,7 +32,6 @@ print(resultado)
 
 ```{r}
 x = 5
-
 if(x>1){
   resultado = "x es mayor a 1" # Nos indicara si x es mayor a 1
 }else if(x<1){
@@ -46,7 +42,7 @@ print(resultado)
 
 
 
-# Creacion de la Funcion con Condicional  (Valor Final)
+# Funcion con Condicional  (Valor Futuro)
 
 Una vez visto los condicionales. Necesitaremos meter un condicional en la funcion, donde este detectara los argumentos que se encuentran dentro de la funcion.  
 
@@ -67,40 +63,39 @@ if(!is.null(va) && !is.null(r) && !is.null(n)){
 ```
 
 
-
 ```{r}
 miVF = interesSimpleBase(1,1,1)
 miVF
 ```
-
-
+\newpage
 # Funcion de Interes Simple con cualquier argumento
 
 Pero ahora necesitamos que la computadora entienda que necesitamos calcular con los argumentos que le damos
 
 ```{r}
-interesSimple = function(va = NULL, r = NULL, n = NULL, VF = NULL) { # Ponemos por default
-   parametros = list(va = va, r = r, n = n, VF = VF)  # Creamos una lista
+# Definimos los parametros con valores nulos
+interesSimple = function(va = NULL, r = NULL, n = NULL, VF = NULL) { 
    
    
-   
-   # Valor Final
+   # Valor Futuro
    if(is.null(VF)){
     VF = va*(1 + r*n)
     return(VF)
    }
    
+   # Valor Actual
    else if(is.null(va)){
      va = VF/(1 + r*n)
      return(va)
    }
    
-   
+   # Tasa de interes del Periodo
    else if(is.null(r)){
      r = ((VF/va )- 1)/n
      return(r)
    }
    
+   # Cantidad de Periodos
    else if(is.null(n)){
      n = ((VF/va) - 1)/r
      return(n)
@@ -109,12 +104,12 @@ interesSimple = function(va = NULL, r = NULL, n = NULL, VF = NULL) { # Ponemos p
 }
 ```
 
-
-## Prueba
+\newpage
+## Prueba con R
 
 Para garantizar el "exito" en nuestro trabajo, agarraremos los siguientes valores para los parametos y verificaremos que el codigo y los calculos cumplen con lo que buscamos.
 
-$$VA=1000\\,VF=1100\\,n=2\\,r=0.5$$
+$$VA=1000\\VF=1100\\n=2\\r=0.5$$
 
 Llamamos la funcion:
 
@@ -128,14 +123,91 @@ MiVA=interesSimple(VF = 1100, r = 0.05, n = 2)
 MiVA
 ```
 
+
 ```{r}
 MiR=interesSimple(va = 1000, VF = 1100, n = 2)
 MiR
 ```
+
 
 ```{r}
 MiN=interesSimple(va = 1000, VF = 1100, r = 0.05)
 MiN
 ```
 
-Efectivamente cumple
+Efectivamente cumple con lo que necesitabamos
+
+\newpage
+# Python
+
+Podriamos intentar hacer el codigo de otra manera, pero la mejor opcion sera traducir del lenguaje "R" al lenguaje de "python".
+
+```{python}
+# Volvemos a definir los parametros con valores nulos
+def interesSimple(va = None, r = None, n = None, VF = None):
+
+
+   # Valor Futuro
+   if VF is None:
+    VF = va*(1 + r*n)
+    return(VF)
+   
+   
+   # Valor Actual
+   elif va is None:
+     va = VF/(1 + r*n)
+     return(va)
+   
+   
+   # Tasa de interes del Periodo
+   elif r is None:
+     r = ((VF/va )- 1)/n
+     return(r)
+   
+   
+   # Cantidad de Periodos
+   elif n is None:
+     n = ((VF/va) - 1)/r
+     return(n)
+   
+
+```
+
+\newpage
+## Prueba con Python
+
+```{python}
+
+MiVF = interesSimple(va=1000, r=0.05, n=2)
+print(MiVF)
+
+```
+
+
+```{python}
+
+MiVA = interesSimple(VF=1100, r=0.05, n=2)
+print(MiVA)
+
+
+```
+
+
+```{python}
+
+MiR = interesSimple(VF=1100, va=1000, n=2)
+print(MiR)
+
+
+```
+
+
+```{python}
+
+MiN = interesSimple(VF=1100, va=1000, r=0.05)
+print(MiN)
+
+
+```
+
+
